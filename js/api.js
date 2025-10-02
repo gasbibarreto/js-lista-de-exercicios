@@ -1,4 +1,4 @@
-const url = "http://localhost:3000"
+const url = "http://localhost:3001"
 
 const api = {
   async buscarFilmes() {
@@ -47,11 +47,36 @@ const api = {
 
   async excluirFilme(id) {
     try {
-      const response = await axios.delete(`${url}/filmes/${id}`)
+      await axios.delete(`${url}/filmes/${id}`)
     }
     catch {
       alert('Erro ao excluir um filme')
       throw error
+    }
+  },
+
+  async buscarFilmePorTermo(termo) {
+    try {
+      const termoMinusculo = termo.toLowerCase()
+      const response = await axios.get(`${url}/filmes`, termoMinusculo)
+      const filmes = response.data
+
+      const filmeFiltrado = filmes.filter(filme => {
+        return filme.nome.toLowerCase().includes(termoMinusculo) || filme.genero.toLowerCase().includes(termoMinusculo)
+      })
+
+      return filmeFiltrado
+    } catch(error) {
+      alert("Erro ao filtrar filme")
+      throw error
+    }
+  },
+
+  async favoritarFilme(id, favorito) {
+    try {
+      await axios.patch(`${url}/filmes/${id}`, { favorito })
+    } catch(error) {
+      alert ("Erro ao favoritar filme por id")
     }
   }
 }

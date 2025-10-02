@@ -11,6 +11,10 @@ body {
   flex-direction: column;
 }
 
+#busca-container {
+  margin-top: 20px;
+}
+
 #lista-filmes-container {
   display: flex;
   flex-direction: column;

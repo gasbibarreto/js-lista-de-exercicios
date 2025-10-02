@@ -71,10 +71,26 @@ const ui = {
     iconeExcluir.alt = "Excluir"
     botaoExcluir.appendChild(iconeExcluir)
 
+    const botaoFavorito = document.createElement("button")
+    botaoFavorito.classList.add("botao-favorito")
+    botaoFavorito.onclick = async () => {
+      try {
+        await api.favoritarFilme(filme.id, !filme.favorito)
+      } catch(error) {
+        alert("Erro ao favoritar filme")
+      }
+    }
+
+    const iconeFavorito = document.createElement("img")
+    iconeFavorito.src = filme.favorito ? "assets/imagens/icone-favorito.png" : "assets/imagens/icone-favorito_outline.png"
+    iconeFavorito.alt = "Icone Favoritar"
+    botaoFavorito.appendChild(iconeFavorito)
+
     const icones = document.createElement("div")
     icones.classList.add("icones")
     icones.appendChild(botaoEditar)
     icones.appendChild(botaoExcluir)
+    icones.appendChild(botaoFavorito)
 
     li.appendChild(filmeNome)
     li.appendChild(filmeGenero)

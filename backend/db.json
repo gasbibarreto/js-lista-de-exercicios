@@ -2,28 +2,63 @@
   "filmes": [
     {
       "id": "1001",
+      "favorito": true,
       "nome": "O Iluminado",
       "genero": "Terror"
     },
     {
       "id": "1002",
+      "favorito": false,
       "nome": "Forrest Gump: O Contador de Histórias",
       "genero": "Drama"
     },
     {
       "id": "1003",
+      "favorito": false,
       "nome": "Matrix",
       "genero": "Ficção Científica"
     },
     {
       "id": "1004",
+      "favorito": false,
       "nome": "Batman: O Cavaleiro das Trevas",
       "genero": "Ação"
     },
     {
       "id": "1005",
+      "favorito": false,
       "nome": "Alien: Romulus",
       "genero": "Ficção Científica"
+    },
+    {
+      "id": "1006",
+      "favorito": false,
+      "nome": "Interestelar",
+      "genero": "Ficção Científica"
+    },
+    {
+      "id": "1007",
+      "favorito": false,
+      "nome": "A Origem",
+      "genero": "Suspense"
+    },
+    {
+      "id": "1008",
+      "favorito": false,
+      "nome": "O Poderoso Chefão",
+      "genero": "Drama"
+    },
+    {
+      "id": "1009",
+      "favorito": false,
+      "nome": "Clube da Luta",
+      "genero": "Drama"
+    },
+    {
+      "id": "1010",
+      "favorito": false,
+      "nome": "Pulp Fiction: Tempo de Violência",
+      "genero": "Crime"
     }
   ]
 }
